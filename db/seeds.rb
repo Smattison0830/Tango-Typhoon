@@ -6,60 +6,76 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "destroying seeds"
+
 Vocab.destroy_all
 User.destroy_all
 
+puts "building seeds"
+
 spencer = User.create!(
-  name: "Spencer",
-  email: "spencer@me.org",
-  password: "spencerlife",
-  line_id: "supenchan"
+  email: "Spencer@cool.com",
+  password: "123456",
+)
+
+VocabList.create!(
+   name: "fruit",
+   user_id: 0
 )
 
 Vocab.create!(
-    english: "Apple"
-    japanese: "りんご"
-    picture: ""
+    english: "Apple",
+    japanese: "りんご",
+    picture: "",
+    description: ""
 )
 
 Vocab.create!(
-    english: "Orange"
-    japanese: "オレンジ"
-    picture: ""
+    english: "Orange",
+    japanese: "オレンジ",
+    picture: "",
+    description: ""
 )
 
 Vocab.create!(
-    english: "Banana"
-    japanese: "バナナ"
-    picture: ""
+    english: "Banana",
+    japanese: "バナナ",
+    picture: "",
+    description: ""
 )
 
 Vocab.create!(
-    english: "Kiwi Fruit"
-    japanese: "キウイ"
-    picture: ""
+    english: "Kiwi Fruit",
+    japanese: "キウイ",
+    picture: "",
+    description: ""
 )
 
 Vocab.create!(
-    english: "Strawberry"
-    japanese: "いちご"
-    picture: ""
+    english: "Strawberry",
+    japanese: "いちご",
+    picture: "",
 )
 
 Vocab.create!(
-    english: "Peach"
-    japanese: "もも"
-    picture: ""
+    english: "Peach",
+    japanese: "もも",
+    picture: "",
+    description: ""
 )
 
 Vocab.create!(
-    english: "Lemon"
-    japanese: "レモン"
-    picture: ""
+    english: "Lemon",
+    japanese: "レモン",
+    picture: "",
+    description: ""
 )
 
 Vocab.create!(
-    english: "Watermelon"
-    japanese: "すいか"
-    picture: ""
+    english: "Watermelon",
+    japanese: "すいか",
+    picture: "",
+    description: ""
 )
+
+puts "seeds created"

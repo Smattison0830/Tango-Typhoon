@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_18_121257) do
+ActiveRecord::Schema.define(version: 2022_01_18_131421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,8 +39,12 @@ ActiveRecord::Schema.define(version: 2022_01_18_121257) do
 
   create_table "vocab_lists", force: :cascade do |t|
     t.string "name"
+    t.bigint "vocab_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_vocab_lists_on_user_id"
+    t.index ["vocab_id"], name: "index_vocab_lists_on_vocab_id"
   end
 
   create_table "vocabs", force: :cascade do |t|
@@ -53,4 +57,6 @@ ActiveRecord::Schema.define(version: 2022_01_18_121257) do
   end
 
   add_foreign_key "cards", "vocabs"
+  add_foreign_key "vocab_lists", "users"
+  add_foreign_key "vocab_lists", "vocabs"
 end
