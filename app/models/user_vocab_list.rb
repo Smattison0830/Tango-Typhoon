@@ -1,2 +1,0 @@
-class UserVocabList < ApplicationRecord
-end
