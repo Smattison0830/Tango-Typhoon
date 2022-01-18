@@ -8,7 +8,7 @@
 
 puts "destroying seeds"
 
-Vocab.destroy_all
+Word.destroy_all
 User.destroy_all
 
 puts "building seeds"
@@ -18,60 +18,60 @@ spencer = User.create!(
   password: "123456",
 )
 
-VocabList.create!(
-   name: "fruit",
-   user_id: 0
-)
+# List.create!(
+#     name: "Fruit",
+#     user_id: 2
+# )
 
-Vocab.create!(
+Word.create!(
     english: "Apple",
     japanese: "りんご",
     picture: "",
     description: ""
 )
 
-Vocab.create!(
+Word.create!(
     english: "Orange",
     japanese: "オレンジ",
     picture: "",
     description: ""
 )
 
-Vocab.create!(
+Word.create!(
     english: "Banana",
     japanese: "バナナ",
     picture: "",
     description: ""
 )
 
-Vocab.create!(
+Word.create!(
     english: "Kiwi Fruit",
     japanese: "キウイ",
     picture: "",
     description: ""
 )
 
-Vocab.create!(
+Word.create!(
     english: "Strawberry",
     japanese: "いちご",
     picture: "",
 )
 
-Vocab.create!(
+Word.create!(
     english: "Peach",
     japanese: "もも",
     picture: "",
     description: ""
 )
 
-Vocab.create!(
+Word.create!(
     english: "Lemon",
     japanese: "レモン",
     picture: "",
     description: ""
 )
 
-Vocab.create!(
+Word.create!(
     english: "Watermelon",
     japanese: "すいか",
     picture: "",

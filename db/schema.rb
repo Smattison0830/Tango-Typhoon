@@ -19,10 +19,20 @@ ActiveRecord::Schema.define(version: 2022_01_18_131421) do
     t.string "name"
     t.string "picture"
     t.integer "points"
-    t.bigint "vocab_id", null: false
+    t.bigint "word_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["vocab_id"], name: "index_cards_on_vocab_id"
+    t.index ["word_id"], name: "index_cards_on_word_id"
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.string "name"
+    t.bigint "word_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_lists_on_user_id"
+    t.index ["word_id"], name: "index_lists_on_word_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,17 +47,7 @@ ActiveRecord::Schema.define(version: 2022_01_18_131421) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "vocab_lists", force: :cascade do |t|
-    t.string "name"
-    t.bigint "vocab_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_vocab_lists_on_user_id"
-    t.index ["vocab_id"], name: "index_vocab_lists_on_vocab_id"
-  end
-
-  create_table "vocabs", force: :cascade do |t|
+  create_table "words", force: :cascade do |t|
     t.string "english"
     t.string "japanese"
     t.string "description"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2022_01_18_131421) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "cards", "vocabs"
-  add_foreign_key "vocab_lists", "users"
-  add_foreign_key "vocab_lists", "vocabs"
+  add_foreign_key "cards", "words"
+  add_foreign_key "lists", "users"
+  add_foreign_key "lists", "words"
 end

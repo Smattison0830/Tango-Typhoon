@@ -1,6 +1,6 @@
-class CreateVocabs < ActiveRecord::Migration[6.1]
+class CreateWords < ActiveRecord::Migration[6.1]
   def change
-    create_table :vocabs do |t|
+    create_table :words do |t|
       t.string :english
       t.string :japanese
       t.string :description
