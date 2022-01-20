@@ -18,9 +18,20 @@ spencer = User.create!(
   password: "123456",
 )
 
-List.create!(
-    name: "fruit"
+# puts spencer[:email]
+
+fruit = List.create!(
+    name: "FRUITS"
 )
+
+# List.first.words.create!(    
+#     english: "Apple",
+#     japanese: "りんご",
+#     picture: "",
+#     description: ""
+# )
+
+# puts fruit_list
 
 # Word.create!(
 #     english: "Apple",
@@ -54,13 +65,14 @@ List.create!(
 #     english: "Strawberry",
 #     japanese: "いちご",
 #     picture: "",
+#     description: ""
 # )
 
 # Word.create!(
-#     english: "Peach",
-#     japanese: "もも",
-#     picture: "",
-#     description: ""
+    # english: "Peach",
+    # japanese: "もも",
+    # picture: "",
+    # description: ""
 # )
 
 # Word.create!(
@@ -76,6 +88,68 @@ List.create!(
 #     picture: "",
 #     description: ""
 # )
+
+fruits = [
+    {
+        english: "Apple",
+        japanese: "りんご",
+        picture: "",
+        description: ""
+    },
+    {
+        english: "Orange",
+        japanese: "オレンジ",
+        picture: "",
+        description: ""
+    },
+    {
+        english: "Banana",
+        japanese: "バナナ",
+        picture: "",
+        description: ""
+    },
+    {
+        english: "Kiwi Fruit",
+        japanese: "キウイ",
+        picture: "",
+        description: ""
+    },
+    {
+        english: "Strawberry",
+        japanese: "いちご",
+        picture: "",
+        description: ""
+    },
+    {
+        english: "Lemon",
+        japanese: "レモン",
+        picture: "",
+        description: ""
+    },
+    {
+        english: "Peach",
+        japanese: "もも",
+        picture: "",
+        description: ""
+    },
+    {
+        english: "Watermelon",
+        japanese: "すいか",
+        picture: "",
+        description: ""
+    }
+]
+
+fruits.each do |fruit|
+    List.first.words.create!( 
+         list_id: 1,
+         english: fruit[:english],
+         japanese: fruit[:japanese],
+         description: fruit[:description],
+         picture: fruit[:picture]
+    )
+end    
+
 
 puts "Created #{User.all.count} users."
 puts "Created #{List.all.count} lists."
