@@ -9,6 +9,7 @@
 puts "destroying seeds"
 
 Word.destroy_all
+List.destroy_all
 User.destroy_all
 
 puts "building seeds"
@@ -146,7 +147,8 @@ fruits.each do |fruit|
          english: fruit[:english],
          japanese: fruit[:japanese],
          description: fruit[:description],
-         picture: fruit[:picture]
+         picture: fruit[:picture],
+         score: nil
     )
 end    
 
