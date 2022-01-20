@@ -18,64 +18,65 @@ spencer = User.create!(
   password: "123456",
 )
 
-# List.create!(
-#     name: "Fruit",
-#     user_id: 2
+List.create!(
+    name: "fruit"
+)
+
+# Word.create!(
+#     english: "Apple",
+#     japanese: "りんご",
+#     picture: "",
+#     description: ""
 # )
 
-Word.create!(
-    english: "Apple",
-    japanese: "りんご",
-    picture: "",
-    description: ""
-)
+# Word.create!(
+#     english: "Orange",
+#     japanese: "オレンジ",
+#     picture: "",
+#     description: ""
+# )
 
-Word.create!(
-    english: "Orange",
-    japanese: "オレンジ",
-    picture: "",
-    description: ""
-)
+# Word.create!(
+#     english: "Banana",
+#     japanese: "バナナ",
+#     picture: "",
+#     description: ""
+# )
 
-Word.create!(
-    english: "Banana",
-    japanese: "バナナ",
-    picture: "",
-    description: ""
-)
+# Word.create!(
+#     english: "Kiwi Fruit",
+#     japanese: "キウイ",
+#     picture: "",
+#     description: ""
+# )
 
-Word.create!(
-    english: "Kiwi Fruit",
-    japanese: "キウイ",
-    picture: "",
-    description: ""
-)
+# Word.create!(
+#     english: "Strawberry",
+#     japanese: "いちご",
+#     picture: "",
+# )
 
-Word.create!(
-    english: "Strawberry",
-    japanese: "いちご",
-    picture: "",
-)
+# Word.create!(
+#     english: "Peach",
+#     japanese: "もも",
+#     picture: "",
+#     description: ""
+# )
 
-Word.create!(
-    english: "Peach",
-    japanese: "もも",
-    picture: "",
-    description: ""
-)
+# Word.create!(
+#     english: "Lemon",
+#     japanese: "レモン",
+#     picture: "",
+#     description: ""
+# )
 
-Word.create!(
-    english: "Lemon",
-    japanese: "レモン",
-    picture: "",
-    description: ""
-)
+# Word.create!(
+#     english: "Watermelon",
+#     japanese: "すいか",
+#     picture: "",
+#     description: ""
+# )
 
-Word.create!(
-    english: "Watermelon",
-    japanese: "すいか",
-    picture: "",
-    description: ""
-)
-
-puts "seeds created"
+puts "Created #{User.all.count} users."
+puts "Created #{List.all.count} lists."
+puts "Created #{Word.all.count} words."

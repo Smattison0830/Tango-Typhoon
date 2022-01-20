@@ -10,29 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_18_131421) do
+ActiveRecord::Schema.define(version: 2022_01_20_003215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cards", force: :cascade do |t|
-    t.string "name"
-    t.string "picture"
-    t.integer "points"
-    t.bigint "word_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["word_id"], name: "index_cards_on_word_id"
-  end
-
   create_table "lists", force: :cascade do |t|
     t.string "name"
-    t.bigint "word_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_lists_on_user_id"
-    t.index ["word_id"], name: "index_lists_on_word_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,11 +40,12 @@ ActiveRecord::Schema.define(version: 2022_01_18_131421) do
     t.string "japanese"
     t.string "description"
     t.string "picture"
+    t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["list_id"], name: "index_words_on_list_id"
   end
 
-  add_foreign_key "cards", "words"
   add_foreign_key "lists", "users"
-  add_foreign_key "lists", "words"
+  add_foreign_key "words", "lists"
 end

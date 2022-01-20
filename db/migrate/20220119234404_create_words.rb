@@ -5,6 +5,7 @@ class CreateWords < ActiveRecord::Migration[6.1]
       t.string :japanese
       t.string :description
       t.string :picture
+      t.references :list, null: false, foreign_key: true
 
       t.timestamps
     end
