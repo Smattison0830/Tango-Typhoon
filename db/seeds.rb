@@ -148,7 +148,6 @@ fruits.each do |fruit|
          japanese: fruit[:japanese],
          description: fruit[:description],
          picture: fruit[:picture],
-         score: nil
     )
 end    
 
