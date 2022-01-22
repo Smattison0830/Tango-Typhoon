@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_20_065030) do
+ActiveRecord::Schema.define(version: 2022_01_22_021109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 2022_01_20_065030) do
     t.string "name"
     t.string "picture"
     t.integer "score"
-    t.bigint "word_id", null: false
+    t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["word_id"], name: "index_cards_on_word_id"
+    t.index ["list_id"], name: "index_cards_on_list_id"
   end
 
   create_table "lists", force: :cascade do |t|
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2022_01_20_065030) do
     t.index ["list_id"], name: "index_words_on_list_id"
   end
 
-  add_foreign_key "cards", "words"
+  add_foreign_key "cards", "words", column: "list_id"
   add_foreign_key "lists", "users"
   add_foreign_key "words", "lists"
 end

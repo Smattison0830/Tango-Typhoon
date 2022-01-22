@@ -83,4 +83,4 @@ production:
   <<: *default
   database: tango_typhoon_production
   username: tango_typhoon
-  password: <%= ENV['TANGO_TYPHOON_DATABASE_PASSWORD'] %>
+  password: <%= ENV['123'] %>

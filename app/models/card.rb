@@ -1,3 +1,4 @@
 class Card < ApplicationRecord
-  has_many :words
+  belongs_to :list
+  has_one :word
 end
