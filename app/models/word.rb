@@ -1,6 +1,6 @@
 class Word < ApplicationRecord
   belongs_to :list 
-  belongs_to :card
+  has_one :card
 
   validates :japanese, presence: true
   validates :english, presence: true
