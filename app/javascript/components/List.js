@@ -1,10 +1,14 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-class List extends Component {
-    render() {
-        return (
-            <h1>These Are your Lists</h1>
-        )
-    }
-}
+const List = ({ name }) => {
+    
+  return (
+      <>
+          <div className="list">
+            <p className="list--name">{name}</p>
+          </div>
+      </>
+    )
+  }
+
 export default List

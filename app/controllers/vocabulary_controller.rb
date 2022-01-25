@@ -1,5 +1,5 @@
 class VocabularyController < ApplicationController
-    before_action :set_word, only: [:show]
+    before_action :set_vocabulary, only: [:show]
 
   def index
     # COMMupload img to cloudinary to create a url that can be called

@@ -1,6 +1,6 @@
 <div class="main">
   <%= react_component("App", {}) %>
-  <div class="d-flex justify-content-center align-items-center mx my-3">
-  <%= link_to "My garden", lists_path, class:'button button-primary'%>
-</div>
+  <%= link_to lists_path do %>
+    <%= react_component("Button", {}) %>
+  <% end %>
 </div>
