@@ -3,6 +3,7 @@ class VocabularyController < ApplicationController
 
   def index
     @words = policy_scope(Word).order(created_at: :desc)
+    @words = @words.where(list_id:(params[:list_id]))
   end
 
   def show

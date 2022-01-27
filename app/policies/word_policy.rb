@@ -1,7 +1,7 @@
 class WordPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(user: user)
+      scope.all
     end
   end
 
@@ -10,7 +10,7 @@ class WordPolicy < ApplicationPolicy
   end
 
   def edit?
-    record.user == user
+    true
   end
 
   def destroy?
@@ -18,6 +18,6 @@ class WordPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    true
   end
 end
