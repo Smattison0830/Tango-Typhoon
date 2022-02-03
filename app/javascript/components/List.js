@@ -1,14 +1,9 @@
 import React from 'react'
 
-const List = ({ name }) => {
-    
+export default function List( props ) {
   return (
-      <>
-          <div className="list">
-            <p className="list--name">{name}</p>
-          </div>
-      </>
+      <div className="list">
+        <p className="list--name">{props.name}</p>
+      </div>
     )
   }
-
-export default List

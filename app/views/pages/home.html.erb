@@ -1,6 +1,8 @@
 <div class="main">
-  <%= react_component("App", {}) %>
   <%= link_to lists_path do %>
-    <%= react_component("Button", {}) %>
+    <%= react_component("VocabularyButton", {}) %>
+  <% end %>
+  <%= link_to decks_path do %>
+    <%= react_component("GameButton", {}) %>
   <% end %>
 </div>
