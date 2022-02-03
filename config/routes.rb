@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :lists, only: [:index, :new, :create, :show, :destroy, :edit, :update] do
     resources :vocabulary, only: [:index, :new, :create, :show, :destroy, :edit, :update]
   end
-  
-  resources :cards, path: "tango_typhoon", only: [:index, :new, :create, :show, :destroy]
+
+  resources :decks, only: [:index] do
+    resources :cards, path: "tango_typhoon", only: [:index, :create, :show, :destroy]
+  end
 end

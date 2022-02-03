@@ -2,6 +2,12 @@
   <%= react_component("ListsGroup", {lists: @lists}) %>
 </button>
 
+<div class="button-group">
+<%= simple_form_for (@lists.first) do |f| %>
+  <%= f.input :name, as: :select %>
+  <%= f.submit "Create New Card", class: "button-primary"%>
+<% end %>
+</div>
 
 
 

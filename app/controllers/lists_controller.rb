@@ -12,7 +12,7 @@ class ListsController < ApplicationController
       @list.user = current_user
       authorize @list
       @list.save
-      redirect_to list_path
+      redirect_to lists_path
     end
   
     def edit
