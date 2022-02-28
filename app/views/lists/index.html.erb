@@ -1,3 +1,7 @@
-  <%= link_to list_vocabulary_index_path do %>
-    <%= react_component("ListsGroup", {lists: @lists}) %>
-  <% end %>
+<% @lists.each do |list|  %>
+  <%= link_to  list_words_path(list) do %>
+    <h1><%= list.name %></h1>
+  <% end %>  
+<% end %>
+
+
