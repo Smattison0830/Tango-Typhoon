@@ -1,10 +1,8 @@
 class WordsController < ApplicationController
-    before_action :set_vocabulary, only: [:show]
+    before_action :set_words, only: [:show]
 
     def index
-        default_words = Word.where(["id = ?", "1"])
-        user_words = policy_scope(Word).order(created_at: :desc)
-        @words = default_words + user_words
+        @words = policy_scope(Word).order(created_at: :desc)
     #   @list = List.find(params[:list_id])
     #   binding_pry
     #   @word = Word.find(params[:id])
@@ -18,7 +16,7 @@ class WordsController < ApplicationController
   
     private
   
-    def set_vocabulary
+    def set_words
       @word = Word.find(params[:id])
       authorize @word
     end

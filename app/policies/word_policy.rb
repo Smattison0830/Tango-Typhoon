@@ -1,7 +1,9 @@
 class WordPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      @words = Word.find([:list_id])
+      
+      scope.where(word: word)
     end
   end
 
