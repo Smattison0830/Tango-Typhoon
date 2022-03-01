@@ -1,7 +1,13 @@
-<% @lists.each do |list|  %>
-  <%= link_to  list_words_path(list) do %>
-    <h1><%= list.name %></h1>
-  <% end %>  
-<% end %>
-
-
+<div class="list-main">
+  <% @lists.each do |list|  %>
+    <%= link_to  list_words_path(list) do %>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <h2><%= list.name %></h2>
+        <p>Product description with <strong>relevant info</strong> only.</p>
+      </div>
+    </div>
+    <% end %>  
+  <% end %>
+</div>

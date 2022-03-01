@@ -1,8 +1,14 @@
+
+
 <div class="main">
-  <%= link_to lists_path do %>
-    <%= react_component("VocabularyButton", {}) %>
-  <% end %>
-  <%= link_to decks_path do %>
-    <%= react_component("GameButton", {}) %>
-  <% end %>
+  <div class="d-grid gap-2 col-6 mx-auto">
+      <%= link_to lists_path do %>
+        <h1 class="btn btn-primary" type="button" >VOCABULARY</h1>
+      <% end %>
+      <%= link_to decks_path do %>
+        <h1 class="btn btn-primary" type="button" >Tango Typhoon</h1>
+      <% end %>
+    </div>
 </div>
+
+

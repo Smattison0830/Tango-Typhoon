@@ -3,7 +3,7 @@ class ListsController < ApplicationController
 
     def index
       default_lists = List.where(["id = ?", "1"])
-      user_lists = policy_scope(List).order(created_at: :desc)
+      user_lists = policy_scope(List).order(created_at: :asc)
       @lists = default_lists + user_lists
     end
 
