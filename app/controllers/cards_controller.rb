@@ -2,6 +2,7 @@ class CardsController < ApplicationController
     before_action :set_cards, only: [:create, :edit, :update, :destroy]
 
     def index
+      @cards = policy_scope(Card).where(list_id:(params[:list_id]))
       # @card = Card.new
       # @list = List.find(params[:list_id])
       # @card.list = @list
