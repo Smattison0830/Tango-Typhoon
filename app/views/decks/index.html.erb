@@ -13,9 +13,3 @@
     <% end %>  
   <% end %>
 </div>
-
-<%= link_to  deck_cards_path(@decks) do %>
-<button type="button" class="btn btn-primary">
-  <%= react_component("VocabularyButton", {lists: @lists}) %>
-</button>
-<% end %>  
