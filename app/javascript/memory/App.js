@@ -1,6 +1,4 @@
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react/cjs/react.development";
+import React, { useState, useEffect} from "react";
 import "./App.css";
 import SingleCard from "./components/SingleCard";
 import Helmet from './images/helmet-1.png'
@@ -9,8 +7,6 @@ import Ring from './images/ring-1.png'
 import Scroll from './images/scroll-1.png'
 import Shield from './images/shield-1.png'
 import Sword from './images/sword-1.png'
-
-console.log(Helmet)
 
 const cardImages = [
   { src: Helmet, matched: false },
