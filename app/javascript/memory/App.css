@@ -1,6 +1,12 @@
+
+
+#root {
+  background: pink;
+}
+
 .App {
   max-width: 860px;
-  margin: 40px auto;
+  margin: auto;
 }
 button {
   background: none;

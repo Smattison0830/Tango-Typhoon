@@ -1,7 +1,6 @@
 import React from "react";
 import MyImage from 'images/cover.png'
 
-
 export default function SingleCard({ card, handleChoice, flipped, disabled }) {
   const handleClick = () => {
     if (!disabled) {
