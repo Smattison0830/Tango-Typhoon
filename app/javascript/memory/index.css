@@ -1,4 +1,4 @@
-  
+
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap');
 
 /* base styles */
@@ -7,6 +7,6 @@
   margin: 0;
   font-size: 1.5em;
   text-align: center;
-  background: pink;
+  background: #1b1523;
   color: #fff;
 }
