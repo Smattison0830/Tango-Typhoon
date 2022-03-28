@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   end
 
   resources :decks, only: [:index] do
-    resources :cards, path: "tango_typhoon", only: [:index, :create, :show, :destroy]
+    namespace :api do
+      namespace :v1 do
+        get 'cards/index', path: "tango_typhoon"
+      end
+    end
   end
+
+
 end
